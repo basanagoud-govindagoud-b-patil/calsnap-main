@@ -1,0 +1,6 @@
+{
+  "name": "SnapCal",
+  "description": "Snap a photo of your meal to estimate calories and keep a calm, supportive daily food log.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

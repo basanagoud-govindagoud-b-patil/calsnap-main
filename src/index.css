@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-brand: #16A34A;
+  --color-brand-dark: #15803D;
+  --color-accent: #F59E0B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  button, a, input, select, textarea {
+    &:focus-visible {
+      outline: 2px solid #16A34A;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 0.25;
+  }
+}
+
+.animate-scan-line {
+  animation: scan-line 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scan-line {
+    animation: none;
+  }
+}
